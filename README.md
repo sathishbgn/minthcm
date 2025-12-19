@@ -55,6 +55,18 @@ This repository contains a source code of MintHCM system.
 
 The installation process is described in this guide: [minthcm.org/support/minthcm-installation-guide/](https://minthcm.org/support/minthcm-installation-guide/)
 
+### Quick Windows setup (dev)
+
+1. Install prerequisites: Docker Desktop (WSL2 backend), Git, Node 18.x+, npm, Composer + PHP 8.2 for local dev.
+2. Copy `.env.example` to `.env` and edit values (e.g., `WEB_PORT`, `MYSQL_PASSWORD`).
+3. Start services: `docker compose up -d` from repo root.
+4. Frontend (optional dev): `cd vue && npm ci && npm run dev` for hot-reload; `npm run build:repo` to build and copy assets to `assets/`.
+5. API tests: `cd api && composer install && composer test` (or run composer/phpunit inside the web container).
+
+Notes:
+- ElasticSearch requires Docker Desktop memory >= 4GB and (for WSL2) vm.max_map_count=262144 set on the Linux host.
+- The `scripts/start-dev.ps1` helper will copy `.env.example` to `.env`, start docker compose, and build frontend assets on Windows.
+
 ## API 🧩
 
 MintHCM is based on SuiteCRM, so the API is very similar. However there are a few important differences, that we covered in this guide: [minthcm.org/support/how-to-use-mint-api/](https://minthcm.org/support/how-to-use-mint-api/)

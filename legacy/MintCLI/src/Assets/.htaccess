@@ -3,6 +3,7 @@
     RewriteEngine On
     RewriteBase __BASE_PATH__
 
+    RewriteRule ^api/index\.php$ - [L]
     RewriteRule ^assets/(.*?)$ assets/$1 [L]
     RewriteRule ^legacy/(.*?)$ legacy/index.php/$1 [L]
     RewriteRule ^api/(.*?)$ api/index.php [L]

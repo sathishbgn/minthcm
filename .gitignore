@@ -13,6 +13,9 @@ index.html
 install.log
 legacy/.htaccess
 legacy/config.php
+
+# local env file (copy from .env.example)
+.env
 legacy/config_override.php
 legacy/config_si.php
 legacy/custom/Extension/modules/Meetings/Ext/Vardefs/_override_sugarfield_jjwg_maps_address_c.php
